@@ -1,4 +1,4 @@
-# ReduxSimpleStarter
+# YouTub Appllication made with ReduxSimpleStarter
 
 Interested in learning [Redux](https://www.udemy.com/react-redux/)?
 
