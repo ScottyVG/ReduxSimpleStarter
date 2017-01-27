@@ -6,6 +6,7 @@ import SearchBar from './components/search_bar';
 import VideoList from './components/video_list';
 import VideoDetail from './components/video_detail';
 
+const KEY = process.env.API_KEY;
 
 // Create a new component. This component should produce some HTML
 class App extends Component {
@@ -17,11 +18,15 @@ class App extends Component {
       selectedVideo: null
     };
 
-    this.videoSearch('surfboards');
+    this.videoSearch('dev tips');
   }
 
   videoSearch(term) {
-    YTSearch({key: API_KEY, term: term}, (videos) => {
+    YTSearch({
+      key: KEY,
+      term: term
+    },
+    (videos) => {
       this.setState({
         videos: videos,
         selectedVideo: videos[0]

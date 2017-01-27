@@ -1,3 +1,7 @@
+const webpack = require('webpack');
+const dotenv = require('dotenv');
+dotenv.load();
+
 module.exports = {
   entry: [
     './src/index.js'
@@ -16,6 +20,11 @@ module.exports = {
       }
     }]
   },
+  'plugins': [
+    new webpack.DefinePlugin({
+      'process.env': { 'API_KEY': JSON.stringify(process.env.API_KEY) },
+    })
+  ],
   resolve: {
     extensions: ['', '.js', '.jsx']
   },
